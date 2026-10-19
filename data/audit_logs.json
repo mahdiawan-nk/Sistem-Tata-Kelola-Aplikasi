@@ -1,0 +1,78 @@
+[
+  {
+    "id": "LOG-1792448406781-781",
+    "timestamp": "2026-10-19T22:20:06.781Z",
+    "userId": "USR-001",
+    "userName": "Ahmad Fauzi, M.Kom",
+    "userRole": "admin",
+    "action": "LOGIN",
+    "details": "User Ahmad Fauzi, M.Kom (admin) berhasil masuk ke dalam sistem portofolio."
+  },
+  {
+    "id": "LOG-001",
+    "timestamp": "2025-02-18T16:45:00.000Z",
+    "userId": "USR-002",
+    "userName": "Siti Rahmawati, S.Kom",
+    "userRole": "staff",
+    "action": "UPDATE",
+    "targetSystemId": "SIS-HR-02",
+    "targetSystemName": "Remunerasi & BKD Online",
+    "details": "Memperbarui progress sprint pengujian integrasi BKD menjadi 75% dan rilis versi v1.0.0-rc2.",
+    "changes": [
+      {
+        "field": "progress",
+        "oldValue": 60,
+        "newValue": 75
+      },
+      {
+        "field": "version",
+        "oldValue": "v1.0.0-rc1",
+        "newValue": "v1.0.0-rc2"
+      }
+    ]
+  },
+  {
+    "id": "LOG-002",
+    "timestamp": "2025-02-17T15:20:00.000Z",
+    "userId": "USR-002",
+    "userName": "Siti Rahmawati, S.Kom",
+    "userRole": "staff",
+    "action": "UPDATE",
+    "targetSystemId": "SIS-AST-01",
+    "targetSystemName": "SIM-Sarpras & Aset Kampus Terpadu",
+    "details": "Menambahkan modul tagging QR code pada tech stack dan mengupdate target peluncuran Agustus 2025."
+  },
+  {
+    "id": "LOG-003",
+    "timestamp": "2025-02-16T14:40:00.000Z",
+    "userId": "USR-002",
+    "userName": "Siti Rahmawati, S.Kom",
+    "userRole": "staff",
+    "action": "UPDATE",
+    "targetSystemId": "SIS-SPM-01",
+    "targetSystemName": "SPMI-QMS",
+    "details": "Memperbarui status progress development menjadi 85% untuk persiapan simulasi Audit Mutu Internal (AMI)."
+  },
+  {
+    "id": "LOG-004",
+    "timestamp": "2025-02-14T10:30:00.000Z",
+    "userId": "USR-001",
+    "userName": "Ahmad Fauzi, M.Kom",
+    "userRole": "admin",
+    "action": "UPDATE",
+    "targetSystemId": "SIS-EDU-01",
+    "targetSystemName": "SIAKAD One",
+    "details": "Pembaruan versi SIAKAD ke v3.4.2 setelah penyesuaian kurikulum MBKM 2025."
+  },
+  {
+    "id": "LOG-005",
+    "timestamp": "2025-02-12T09:40:00.000Z",
+    "userId": "USR-002",
+    "userName": "Siti Rahmawati, S.Kom",
+    "userRole": "staff",
+    "action": "UPDATE",
+    "targetSystemId": "SIS-FIN-02",
+    "targetSystemName": "EduPay Multi-Channel Payment",
+    "details": "Menghubungkan integrasi pembayaran QRIS dinamis untuk wisuda periode genap."
+  }
+]

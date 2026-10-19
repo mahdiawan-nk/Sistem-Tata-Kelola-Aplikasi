@@ -1,0 +1,6 @@
+{
+  "name": "SIM-Portofolio & Tata Kelola Sistem Informasi",
+  "description": "Platform Tata Kelola & Monitoring Portofolio Sistem Informasi Institusi: Pendidikan, SDM, Keuangan, Sarpras, Penelitian, Perpustakaan, PMB, SPM, Dikti, Alumni berbasis JSON dan RBAC.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
