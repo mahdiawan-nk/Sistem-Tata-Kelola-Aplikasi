@@ -1,5 +1,113 @@
 [
   {
+    "id": "LOG-1792487815287-222",
+    "timestamp": "2026-10-20T09:16:55.287Z",
+    "userId": "USR-001",
+    "userName": "Rahmat Hamdani, M.Kom",
+    "userRole": "admin",
+    "action": "LOGIN",
+    "details": "User Rahmat Hamdani, M.Kom (admin) berhasil masuk ke dalam sistem portofolio."
+  },
+  {
+    "id": "LOG-1792487499434-137",
+    "timestamp": "2026-10-20T09:11:39.434Z",
+    "userId": "USR-001",
+    "userName": "Rahmat Hamdani, M.Kom",
+    "userRole": "admin",
+    "action": "LOGIN",
+    "details": "User Rahmat Hamdani, M.Kom (admin) berhasil masuk ke dalam sistem portofolio."
+  },
+  {
+    "id": "LOG-1792478090975-270",
+    "timestamp": "2026-10-20T06:34:50.975Z",
+    "userId": "USR-001",
+    "userName": "Rahmat Hamdani, M.Kom",
+    "userRole": "admin",
+    "action": "LOGIN",
+    "details": "User Rahmat Hamdani, M.Kom (admin) berhasil masuk ke dalam sistem portofolio."
+  },
+  {
+    "id": "LOG-1792477877876-223",
+    "timestamp": "2026-10-20T06:31:17.876Z",
+    "userId": "USR-001",
+    "userName": "Rahmat Hamdani, M.Kom",
+    "userRole": "admin",
+    "action": "LOGIN",
+    "details": "User Rahmat Hamdani, M.Kom (admin) berhasil masuk ke dalam sistem portofolio."
+  },
+  {
+    "id": "LOG-1792477490359-439",
+    "timestamp": "2026-10-20T06:24:50.359Z",
+    "userId": "USR-001",
+    "userName": "Rahmat Hamdani, M.Kom",
+    "userRole": "admin",
+    "action": "LOGIN",
+    "details": "User Rahmat Hamdani, M.Kom (admin) berhasil masuk ke dalam sistem portofolio."
+  },
+  {
+    "id": "LOG-1792477446219-823",
+    "timestamp": "2026-10-20T06:24:06.219Z",
+    "userId": "USR-001",
+    "userName": "Rahmat Hamdani, M.Kom",
+    "userRole": "admin",
+    "action": "LOGIN",
+    "details": "User Rahmat Hamdani, M.Kom (admin) berhasil masuk ke dalam sistem portofolio."
+  },
+  {
+    "id": "LOG-1792477043607-682",
+    "timestamp": "2026-10-20T06:17:23.607Z",
+    "userId": "USR-002",
+    "userName": "Siti Rahmawati, S.Kom",
+    "userRole": "staff",
+    "action": "LOGIN",
+    "details": "User Siti Rahmawati, S.Kom (staff) berhasil masuk ke dalam sistem portofolio."
+  },
+  {
+    "id": "LOG-1792472273467-836",
+    "timestamp": "2026-10-20T04:57:53.467Z",
+    "userId": "USR-001",
+    "userName": "Rahmat Hamdani, M.Kom",
+    "userRole": "admin",
+    "action": "LOGIN",
+    "details": "User Rahmat Hamdani, M.Kom (admin) berhasil masuk ke dalam sistem portofolio."
+  },
+  {
+    "id": "LOG-1792466147293-707",
+    "timestamp": "2026-10-20T03:15:47.293Z",
+    "userId": "USR-001",
+    "userName": "Ahmad Fauzi, M.Kom",
+    "userRole": "admin",
+    "action": "LOGIN",
+    "details": "User Ahmad Fauzi, M.Kom (admin) berhasil masuk ke dalam sistem portofolio."
+  },
+  {
+    "id": "LOG-1792465965253-891",
+    "timestamp": "2026-10-20T03:12:45.253Z",
+    "userId": "USR-001",
+    "userName": "Ahmad Fauzi, M.Kom",
+    "userRole": "admin",
+    "action": "LOGIN",
+    "details": "User Ahmad Fauzi, M.Kom (admin) berhasil masuk ke dalam sistem portofolio."
+  },
+  {
+    "id": "LOG-1792465869773-826",
+    "timestamp": "2026-10-20T03:11:09.773Z",
+    "userId": "USR-001",
+    "userName": "Ahmad Fauzi, M.Kom",
+    "userRole": "admin",
+    "action": "LOGIN",
+    "details": "User Ahmad Fauzi, M.Kom (admin) berhasil masuk ke dalam sistem portofolio."
+  },
+  {
+    "id": "LOG-1792465793237-672",
+    "timestamp": "2026-10-20T03:09:53.237Z",
+    "userId": "USR-001",
+    "userName": "Ahmad Fauzi, M.Kom",
+    "userRole": "admin",
+    "action": "LOGIN",
+    "details": "User Ahmad Fauzi, M.Kom (admin) berhasil masuk ke dalam sistem portofolio."
+  },
+  {
     "id": "LOG-1792448406781-781",
     "timestamp": "2026-10-19T22:20:06.781Z",
     "userId": "USR-001",

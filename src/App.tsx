@@ -1,21 +1,38 @@
-import React, { useState, useEffect } from 'react';
-import { AuthProvider, useAuth } from './context/AuthContext';
-import { DashboardStats, SystemCategory, SystemItem } from './types';
-import { api } from './services/api';
-import { Navbar } from './components/Navbar';
-import { LoginModal } from './components/LoginModal';
-import { DashboardView } from './components/DashboardView';
-import { SystemsListView } from './components/SystemsListView';
-import { SystemDetailModal } from './components/SystemDetailModal';
-import { SystemFormModal } from './components/SystemFormModal';
-import { AuditLogView } from './components/AuditLogView';
-import { DataManagementView } from './components/DataManagementView';
-import { AlertCircle, CheckCircle2, Shield, Lock, ArrowRight } from 'lucide-react';
+import React, { useState, useEffect } from "react";
+import { AuthProvider, useAuth } from "./context/AuthContext";
+import { DashboardStats, SystemCategory, SystemItem } from "./types";
+import { api } from "./services/api";
+import { Navbar } from "./components/Navbar";
+import { LoginModal } from "./components/LoginModal";
+import { DashboardView } from "./components/DashboardView";
+
+import { UsersView } from "./components/UsersView";
+import { SystemsListView } from "./components/SystemsListView";
+import { SystemDetailModal } from "./components/SystemDetailModal";
+import { SystemFormModal } from "./components/SystemFormModal";
+import { AuditLogView } from "./components/AuditLogView";
+import { DataManagementView } from "./components/DataManagementView";
+import {
+  AlertCircle,
+  CheckCircle2,
+  Shield,
+  Lock,
+  ArrowRight,
+} from "lucide-react";
 
 function MainApp() {
-  const { user, isLoggedIn, isLoginModalOpen, setIsLoginModalOpen, canEdit, canDelete } = useAuth();
+  const {
+    user,
+    isLoggedIn,
+    isLoginModalOpen,
+    setIsLoginModalOpen,
+    canEdit,
+    canDelete,
+  } = useAuth();
 
-  const [currentTab, setCurrentTab] = useState<'dashboard' | 'systems' | 'logs' | 'data'>('dashboard');
+  const [currentTab, setCurrentTab] = useState<
+    "dashboard" | "systems" | "logs" | "data" | "users"
+  >("dashboard");
   const [systems, setSystems] = useState<SystemItem[]>([]);
   const [stats, setStats] = useState<DashboardStats | null>(null);
   const [loading, setLoading] = useState(true);
@@ -27,12 +44,20 @@ function MainApp() {
   const [editingSystem, setEditingSystem] = useState<SystemItem | null>(null);
 
   // Filter state passed from dashboard to systems list
-  const [activeCategoryFilter, setActiveCategoryFilter] = useState<SystemCategory | 'all'>('all');
+  const [activeCategoryFilter, setActiveCategoryFilter] = useState<
+    SystemCategory | "all"
+  >("all");
 
   // Notifications
-  const [notification, setNotification] = useState<{ type: 'success' | 'error'; message: string } | null>(null);
+  const [notification, setNotification] = useState<{
+    type: "success" | "error";
+    message: string;
+  } | null>(null);
 
-  const showNotification = (message: string, type: 'success' | 'error' = 'success') => {
+  const showNotification = (
+    message: string,
+    type: "success" | "error" = "success"
+  ) => {
     setNotification({ message, type });
     setTimeout(() => {
       setNotification(null);
@@ -42,12 +67,15 @@ function MainApp() {
   const loadData = async () => {
     setLoading(true);
     try {
-      const [systemsRes, statsRes] = await Promise.all([api.getSystems(), api.getStats()]);
+      const [systemsRes, statsRes] = await Promise.all([
+        api.getSystems(),
+        api.getStats(),
+      ]);
       setSystems(systemsRes.data);
       setStats(statsRes);
     } catch (err: any) {
-      console.error('Failed to load systems data:', err);
-      showNotification('Gagal memuat data dari server.', 'error');
+      console.error("Failed to load systems data:", err);
+      showNotification("Gagal memuat data dari server.", "error");
     } finally {
       setLoading(false);
     }
@@ -83,17 +111,24 @@ function MainApp() {
 
   const handleDeleteSystem = async (id: string, name: string) => {
     if (!canDelete) {
-      showNotification('Hanya admin yang memiliki izin menghapus sistem.', 'error');
+      showNotification(
+        "Hanya admin yang memiliki izin menghapus sistem.",
+        "error"
+      );
       return;
     }
 
-    if (window.confirm(`Apakah Anda yakin ingin menghapus sistem "${name}" dari portofolio? Tindakan ini akan dicatat dalam audit log.`)) {
+    if (
+      window.confirm(
+        `Apakah Anda yakin ingin menghapus sistem "${name}" dari portofolio? Tindakan ini akan dicatat dalam audit log.`
+      )
+    ) {
       try {
         await api.deleteSystem(id);
         showNotification(`Sistem "${name}" berhasil dihapus.`);
         loadData();
       } catch (err: any) {
-        showNotification(err.message || 'Gagal menghapus sistem.', 'error');
+        showNotification(err.message || "Gagal menghapus sistem.", "error");
       }
     }
   };
@@ -111,7 +146,7 @@ function MainApp() {
 
   const handleFilterCategoryFromDashboard = (cat: SystemCategory) => {
     setActiveCategoryFilter(cat);
-    setCurrentTab('systems');
+    setCurrentTab("systems");
   };
 
   return (
@@ -124,12 +159,12 @@ function MainApp() {
         <div className="fixed top-20 right-4 z-50 animate-in fade-in slide-in-from-top-4 duration-200">
           <div
             className={`px-4 py-3 rounded-xl shadow-lg border flex items-center gap-2.5 text-xs font-medium ${
-              notification.type === 'success'
-                ? 'bg-emerald-900 text-white border-emerald-800'
-                : 'bg-red-900 text-white border-red-800'
+              notification.type === "success"
+                ? "bg-emerald-900 text-white border-emerald-800"
+                : "bg-red-900 text-white border-red-800"
             }`}
           >
-            {notification.type === 'success' ? (
+            {notification.type === "success" ? (
               <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0" />
             ) : (
               <AlertCircle className="w-4 h-4 text-red-400 shrink-0" />
@@ -146,7 +181,9 @@ function MainApp() {
             <div className="flex items-center gap-2 text-indigo-200">
               <Shield className="w-4 h-4 text-indigo-400 shrink-0" />
               <span>
-                Anda sedang melihat ringkasan publik. Masuk dengan akun <strong>Admin</strong>, <strong>Staff Pengembang</strong>, atau <strong>Viewer</strong> untuk akses penuh.
+                Anda sedang melihat ringkasan publik. Masuk dengan akun{" "}
+                <strong>Admin</strong>, <strong>Staff Pengembang</strong>, atau{" "}
+                <strong>Viewer</strong> untuk akses penuh.
               </span>
             </div>
             <button
@@ -163,7 +200,7 @@ function MainApp() {
 
       {/* Main Content Area */}
       <main className="flex-1 max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 pt-6">
-        {currentTab === 'dashboard' && (
+        {currentTab === "dashboard" && (
           <DashboardView
             stats={stats}
             systems={systems}
@@ -172,14 +209,14 @@ function MainApp() {
             onOpenNewSystemModal={handleOpenCreate}
             onFilterCategory={handleFilterCategoryFromDashboard}
             onGoToSystemsList={() => {
-              setActiveCategoryFilter('all');
-              setCurrentTab('systems');
+              setActiveCategoryFilter("all");
+              setCurrentTab("systems");
             }}
-            onGoToLogs={() => setCurrentTab('logs')}
+            onGoToLogs={() => setCurrentTab("logs")}
           />
         )}
 
-        {currentTab === 'systems' && (
+        {currentTab === "systems" && (
           <SystemsListView
             systems={systems}
             loading={loading}
@@ -191,15 +228,22 @@ function MainApp() {
           />
         )}
 
-        {currentTab === 'logs' && <AuditLogView />}
+        {currentTab === "logs" && <AuditLogView />}
 
-        {currentTab === 'data' && (
+        {currentTab === "data" && (
           <DataManagementView
             onRefreshAll={() => {
               loadData();
-              showNotification('Database diperbarui.');
+              showNotification("Database diperbarui.");
             }}
           />
+        )}
+
+        {currentTab === "users" && (
+          <>
+            <UsersView />
+            {/* <h1>Halaman data user</h1> */}
+          </>
         )}
       </main>
 
@@ -207,8 +251,12 @@ function MainApp() {
       <footer className="border-t border-slate-200 bg-white py-6 mt-auto">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-slate-500">
           <div>
-            <span>SIM-Portofolio IT & Tata Kelola Sistem Informasi Institusi</span>
-            <span aria-hidden="true" className="mx-2">·</span>
+            <span>
+              SIM-Portofolio IT & Tata Kelola Sistem Informasi Institusi
+            </span>
+            <span aria-hidden="true" className="mx-2">
+              ·
+            </span>
             <span className="font-mono">JSON Persistence Engine</span>
           </div>
           <div className="flex items-center gap-4">
@@ -224,9 +272,9 @@ function MainApp() {
         isOpen={isLoginModalOpen}
         onClose={() => setIsLoginModalOpen(false)}
         onSuccess={() => {
-          showNotification('Berhasil masuk akun.');
+          showNotification("Berhasil masuk akun.");
           loadData();
-          setCurrentTab('dashboard');
+          setCurrentTab("dashboard");
         }}
       />
 

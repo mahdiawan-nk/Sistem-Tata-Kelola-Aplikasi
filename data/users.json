@@ -1,0 +1,29 @@
+[
+  {
+    "id": "USR-001",
+    "name": "Rahmat Hamdani, M.Kom",
+    "email": "admin@kampus.ac.id",
+    "password": "admin123",
+    "role": "admin",
+    "department": "UPT Teknologi Informasi & Komunikasi",
+    "phone": "+62 811-2345-6789"
+  },
+  {
+    "id": "USR-002",
+    "name": "Siti Rahmawati, S.Kom",
+    "email": "staff@kampus.ac.id",
+    "password": "staff123",
+    "role": "staff",
+    "department": "Divisi Pengembangan Aplikasi & Integrasi",
+    "phone": "+62 812-3456-7890"
+  },
+  {
+    "id": "USR-003",
+    "name": "Prof. Dr. Ir. Gunawan Wibisono",
+    "email": "manajemen@kampus.ac.id",
+    "password": "viewer123",
+    "role": "viewer",
+    "department": "Wakil Rektor Bidang Perencanaan & Sistem Informasi",
+    "phone": "+62 813-4567-8901"
+  }
+]
